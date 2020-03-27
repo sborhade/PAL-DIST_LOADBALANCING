@@ -1,4 +1,4 @@
-name: Pal Tracker Distributed Pipeline 1
+name: Pal Tracker Distributed Apps only
 
 on:
   push:
@@ -13,10 +13,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Create test database
-        run: |
-          mysql -uroot -proot < databases/create_databases.sql
-          gradle testMigrate
+#      - name: Create test database
+ #       run: |
+  #        mysql -uroot -proot < databases/create_databases.sql
+   #       gradle testMigrate
       - name: Build with Gradle
         run: gradle clean build
       - name: Publish allocations artifact
